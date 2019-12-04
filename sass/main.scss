@@ -1,0 +1,77 @@
+$font-primary: 'Open Sans', sans-serif;
+$font-secondary: 'Khula', sans-serif;
+
+$font-serif: 'Cormorant Garamond', serif;
+$font-primary-telex: 'Telex', sans-serif;
+$font-primary-lato: 'Lato', sans-serif;;
+
+// Animation timings
+$t_mobile-nav-animation: 500ms;
+
+// Breakpoints
+$b_tablet: 678px;
+$b_desktop: 1200px;
+
+
+/* Reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body, html {
+    margin: 0;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: unset;
+    font-size: unset;
+    font-weight: unset;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/* General */
+
+body {
+    font-family: $font-primary-lato;
+    font-size: 1.6rem;
+}
+
+.site-container {
+    display: grid;
+}
+
+@media (min-width: $b_tablet) {
+    .site-container {
+        grid-template-columns: 180px 1fr;
+    }
+}
+
+.site-title {
+    font-family: $font-serif;
+    font-size: 2.7rem;
+    line-height: 3.24rem;
+}
