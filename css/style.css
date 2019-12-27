@@ -70,38 +70,60 @@ body {
   line-height: 3.24rem;
 }
 
-/* Slider */
 .main {
   height: 100vh;
 }
 
-.slider {
-  height: 100%;
-  position: relative;
-}
-
-.controls {
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
-}
-
-.slider__item,
-.tns-outer,
-.tns-inner,
+/* Gallery */
 .gallery,
+.item-container,
 .gallery-item,
 .image {
   height: 100%;
 }
 
-.gallery-item {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.gallery {
+  position: relative;
 }
 
-.image img {
+/* --- Overlay controls */
+.overlay-controls {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+
+.left-control {
+  left: 0;
+  right: auto;
+  cursor: w-resize;
+}
+
+.right-control {
+  left: auto;
+  right: 0;
+  cursor: e-resize;
+}
+
+/* --- END Overlay controls */
+.item-container {
+  overflow: hidden;
+}
+
+.gallery-item {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  animation: 0.4s ease-in;
+}
+
+.active,
+.next {
+  display: flex;
+}
+
+.gallery-item img {
   display: block;
   max-height: 100%;
   max-width: 100%;
@@ -111,6 +133,41 @@ body {
   position: absolute;
   bottom: 30px;
   right: 10px;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+@keyframes left {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes right {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
